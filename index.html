@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaffStack | Jogos & Aplicativos Mobile</title>
+  <meta name="description" content="Site oficial de desenvolvimento da RaffStack. Conheça nossos jogos mobile, incluindo Rogue Frog para Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b140e;
+      --card-bg: rgba(20, 38, 26, 0.7);
+      --card-border: rgba(46, 204, 113, 0.25);
+      --accent: #2ecc71;
+      --accent-glow: rgba(46, 204, 113, 0.4);
+      --text: #e8f5e9;
+      --text-muted: #a3c2a8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(46, 204, 113, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(39, 174, 96, 0.08) 0%, transparent 40%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 20px 20px;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+    header {
+      margin-bottom: 40px;
+    }
+    .logo-badge {
+      display: inline-block;
+      padding: 8px 18px;
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .game-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .game-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .game-icon {
+      font-size: 4rem;
+      filter: drop-shadow(0 8px 16px rgba(46, 204, 113, 0.4));
+    }
+    .game-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .game-desc {
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 500px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      color: #0b140e;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 36px;
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
+      transition: all 0.25s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 14px 30px rgba(46, 204, 113, 0.6);
+      background: linear-gradient(135deg, #3df387, #2ecc71);
+    }
+    .links-section {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .link-tag {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s;
+    }
+    .link-tag:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(46, 204, 113, 0.1);
+    }
+    footer {
+      margin-top: 60px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-badge">Estúdio de Jogos Indie</div>
+      <h1>RaffStack</h1>
+      <p class="subtitle">Criando experiências dinâmicas, desafiadoras e divertidas para dispositivos mobile.</p>
+    </header>
+
+    <main>
+      <div class="game-card">
+        <div class="game-icon">🐸</div>
+        <h2 class="game-title">Rogue Frog</h2>
+        <p class="game-desc">
+          Um roguelike arcade frenético onde você controla um sapo habilidoso enfrentando hordas de inimigos, chefões épicos, melhorias e relíquias misteriosas na lagoa!
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.flappyfrog.game" class="btn" target="_blank" rel="noopener">
+          <span>Baixar na Google Play Store</span> ➔
+        </a>
+      </div>
+
+      <div class="links-section">
+        <a href="privacy-policy.html" class="link-tag">🔒 Política de Privacidade</a>
+        <a href="app-ads.txt" class="link-tag">📄 app-ads.txt</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 RaffStack. Todos os direitos reservados.</p>
+      <p>Desenvolvedor: RaffStack | Contato: rrolisilvag@gmail.com</p>
+    </footer>
+  </div>
+</body>
+</html>
